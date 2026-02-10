@@ -5,10 +5,12 @@ import Image from "next/image";
 import { getFlashSaleProducts } from "@/data/products";
 import { formatPrice } from "@/lib/utils";
 import { useCartStore } from "@/store/cart-store";
+import { useToastStore } from "@/store/toast-store";
 
 export default function FlashSale() {
   const products = getFlashSaleProducts();
   const addItem = useCartStore((s) => s.addItem);
+  const showToast = useToastStore((s) => s.showToast);
   const [time, setTime] = useState({ h: 1, m: 45, s: 12 });
 
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function FlashSale() {
             <button
               key={product.id}
               className="bg-white rounded-xl p-2 flex items-center gap-2 cursor-pointer hover:shadow-md transition-shadow text-left"
-              onClick={() => addItem(product)}
+              onClick={() => { addItem(product); showToast(product); }}
             >
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-slate-100 overflow-hidden shrink-0">
                 <Image

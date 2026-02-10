@@ -9,14 +9,28 @@ import { CATEGORIES } from "@/lib/utils";
 function ProductListingInner() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
+  const searchQuery = searchParams.get("q") || "";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [sortBy, setSortBy] = useState("default");
 
   const filtered = useMemo(() => {
-    let result =
-      selectedCategory === "all"
-        ? [...products]
-        : products.filter((p) => p.category === selectedCategory);
+    let result = [...products];
+
+    // Filter by search query
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.brand?.toLowerCase().includes(q)
+      );
+    }
+
+    // Filter by category
+    if (selectedCategory !== "all") {
+      result = result.filter((p) => p.category === selectedCategory);
+    }
 
     if (sortBy === "price-asc") result.sort((a, b) => a.price - b.price);
     else if (sortBy === "price-desc")
@@ -25,10 +39,23 @@ function ProductListingInner() {
       result.sort((a, b) => a.name.localeCompare(b.name));
 
     return result;
-  }, [selectedCategory, sortBy]);
+  }, [selectedCategory, sortBy, searchQuery]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
+      {/* Search Results Banner */}
+      {searchQuery && (
+        <div className="bg-primary-light rounded-xl px-4 py-3 mb-4 flex items-center justify-between">
+          <p className="text-sm text-slate-700">
+            Kết quả tìm kiếm cho &ldquo;<span className="font-bold text-primary">{searchQuery}</span>&rdquo;
+            {" "}({filtered.length} sản phẩm)
+          </p>
+          <a href="/san-pham" className="text-xs font-bold text-primary hover:underline">
+            Xóa bộ lọc
+          </a>
+        </div>
+      )}
+
       {/* Category Chips */}
       <div className="flex overflow-x-auto hide-scrollbar gap-2 mb-4 pb-2">
         <button

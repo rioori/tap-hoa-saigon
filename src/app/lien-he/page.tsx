@@ -1,8 +1,36 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch("/api/lien-he", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        alert(data.message || "Có lỗi xảy ra");
+      }
+    } catch {
+      alert("Có lỗi xảy ra. Vui lòng thử lại.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       {/* Map Section */}
@@ -84,57 +112,92 @@ export default function ContactPage() {
             Chúng tôi sẽ phản hồi yêu cầu của bạn trong vòng 24 giờ làm việc.
           </p>
         </div>
-        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <label
-              className="block text-sm font-semibold text-slate-700 mb-1.5"
-              htmlFor="contact-name"
+        {sent ? (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="material-icons text-green-500 text-3xl">check_circle</span>
+            </div>
+            <h3 className="font-bold text-slate-800 mb-2">Đã gửi thành công!</h3>
+            <p className="text-sm text-slate-500 mb-4">Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+            <button
+              onClick={() => setSent(false)}
+              className="text-primary font-medium text-sm hover:underline"
             >
-              Họ và tên
-            </label>
-            <input
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm"
-              id="contact-name"
-              placeholder="Nhập tên của bạn"
-              type="text"
-            />
+              Gửi tin nhắn khác
+            </button>
           </div>
-          <div>
-            <label
-              className="block text-sm font-semibold text-slate-700 mb-1.5"
-              htmlFor="contact-email"
+        ) : (
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <div>
+              <label
+                className="block text-sm font-semibold text-slate-700 mb-1.5"
+                htmlFor="contact-name"
+              >
+                Họ và tên
+              </label>
+              <input
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm"
+                id="contact-name"
+                placeholder="Nhập tên của bạn"
+                type="text"
+                required
+                value={form.name}
+                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+              />
+            </div>
+            <div>
+              <label
+                className="block text-sm font-semibold text-slate-700 mb-1.5"
+                htmlFor="contact-email"
+              >
+                Email
+              </label>
+              <input
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm"
+                id="contact-email"
+                placeholder="email@vi-du.vn"
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+              />
+            </div>
+            <div>
+              <label
+                className="block text-sm font-semibold text-slate-700 mb-1.5"
+                htmlFor="contact-message"
+              >
+                Lời nhắn
+              </label>
+              <textarea
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm resize-none"
+                id="contact-message"
+                placeholder="Bạn cần hỗ trợ điều gì?"
+                rows={4}
+                required
+                value={form.message}
+                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+              />
+            </div>
+            <button
+              className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+              type="submit"
+              disabled={loading}
             >
-              Email
-            </label>
-            <input
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm"
-              id="contact-email"
-              placeholder="email@vi-du.vn"
-              type="email"
-            />
-          </div>
-          <div>
-            <label
-              className="block text-sm font-semibold text-slate-700 mb-1.5"
-              htmlFor="contact-message"
-            >
-              Lời nhắn
-            </label>
-            <textarea
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm resize-none"
-              id="contact-message"
-              placeholder="Bạn cần hỗ trợ điều gì?"
-              rows={4}
-            />
-          </div>
-          <button
-            className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-            type="submit"
-          >
-            <span className="material-icons text-xl">send</span>
-            <span>Gửi tin nhắn ngay</span>
-          </button>
-        </form>
+              {loading ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Đang gửi...
+                </>
+              ) : (
+                <>
+                  <span className="material-icons text-xl">send</span>
+                  <span>Gửi tin nhắn ngay</span>
+                </>
+              )}
+            </button>
+          </form>
+        )}
       </section>
     </div>
   );

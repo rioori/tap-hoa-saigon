@@ -2,16 +2,29 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useCartStore } from "@/store/cart-store";
 import { useEffect, useState } from "react";
 
 export default function Header() {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const getItemCount = useCartStore((s) => s.getItemCount);
 
   useEffect(() => setMounted(true), []);
   const count = mounted ? getItemCount() : 0;
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (q) {
+      router.push(`/san-pham?q=${encodeURIComponent(q)}`);
+      setSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-primary shadow-md">
@@ -42,18 +55,20 @@ export default function Header() {
         </Link>
 
         {/* Search bar - desktop */}
-        <div className="hidden md:block flex-1 max-w-xl">
+        <form onSubmit={handleSearch} className="hidden md:block flex-1 max-w-xl">
           <div className="relative">
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm kiếm thực phẩm, đồ dùng..."
               className="w-full h-11 pl-11 pr-4 bg-white/95 border-none rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-white/50"
             />
-            <span className="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
-              search
-            </span>
+            <button type="submit" className="absolute left-3 top-1/2 -translate-y-1/2">
+              <span className="material-icons text-slate-400 text-xl">search</span>
+            </button>
           </div>
-        </div>
+        </form>
 
         {/* Desktop Nav Links */}
         <nav className="hidden lg:flex items-center gap-6">
@@ -100,19 +115,21 @@ export default function Header() {
 
       {/* Mobile Search - expandable */}
       {searchOpen && (
-        <div className="md:hidden px-4 pb-3">
+        <form onSubmit={handleSearch} className="md:hidden px-4 pb-3">
           <div className="relative">
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm kiếm thực phẩm, đồ dùng..."
               className="w-full h-11 pl-11 pr-4 bg-white/95 border-none rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-white/50"
               autoFocus
             />
-            <span className="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
-              search
-            </span>
+            <button type="submit" className="absolute left-3 top-1/2 -translate-y-1/2">
+              <span className="material-icons text-slate-400 text-xl">search</span>
+            </button>
           </div>
-        </div>
+        </form>
       )}
     </header>
   );

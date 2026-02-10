@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danh sách sản phẩm - Tạp Hóa Sài Gòn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "dark-blue": "#0a2e7a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- iOS Status Bar Spacer -->
+<div class="h-11 bg-primary w-full sticky top-0 z-50"></div>
+<!-- Header Navigation -->
+<header class="bg-primary text-white sticky top-11 z-50 px-4 py-3 flex items-center justify-between shadow-md">
+<div class="flex items-center gap-3">
+<button class="p-1 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-icons">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Tạp Hóa Sài Gòn</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-1 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-icons text-2xl">search</span>
+</button>
+<div class="relative">
+<button class="p-1 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-icons text-2xl">shopping_cart</span>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-500 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-primary">3</span>
+</div>
+</div>
+</header>
+<!-- Category Chips & Filter Bar -->
+<div class="bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 sticky top-[104px] z-40">
+<!-- Horizontal Categories -->
+<div class="flex overflow-x-auto hide-scrollbar py-3 px-4 gap-2">
+<button class="px-4 py-1.5 bg-primary text-white text-sm font-medium rounded-full whitespace-nowrap">Tất cả</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium rounded-full whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-700">Rau củ</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium rounded-full whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-700">Trái cây</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium rounded-full whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-700">Thịt &amp; Cá</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium rounded-full whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-700">Sữa &amp; Trứng</button>
+<button class="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium rounded-full whitespace-nowrap hover:bg-slate-200 dark:hover:bg-slate-700">Đồ khô</button>
+</div>
+<!-- Filter/Sort Sub-bar -->
+<div class="flex divide-x divide-slate-200 dark:divide-slate-800 border-t border-slate-200 dark:border-slate-800">
+<button class="flex-1 py-2.5 flex items-center justify-center gap-2 text-sm font-semibold text-dark-blue dark:text-slate-300">
+<span class="material-icons text-lg">filter_list</span>
+                Lọc bộ lọc
+            </button>
+<button class="flex-1 py-2.5 flex items-center justify-center gap-2 text-sm font-semibold text-dark-blue dark:text-slate-300">
+<span class="material-icons text-lg">sort</span>
+                Sắp xếp
+            </button>
+</div>
+</div>
+<!-- Main Content: Product Grid -->
+<main class="p-4 mb-20">
+<div class="grid grid-cols-2 gap-3">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Nải chuối chín vàng tươi mới hái" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM8wdm5k5T7yyaI7Ph-Ibb6kIRAB7XownghDXjQiNPfvWfX0lNEaRMOnYKWrqtb3xVXs6va5mPBStV7Mx8Xfy8wWVr5wlsdYC4oFySIlFgf5X3Oo8PtshgkKdufvqsURDmn8enZcwwuLV03PHVeISeUx5Jkx88C7SQvEVoO99bBPiW_DdnfgEb-7A-b_Dfib-vXu7kHLIlo2LddE2_3l06-5u2zuAACsAn_fHFjqXrboCwurPqdBZWnmh5F_yZXQdm04djP_r7Ui8"/>
+<span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">-15%</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Trái cây</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Chuối sứ Mỹ Tho loại 1</h3>
+<p class="text-[11px] text-slate-400 mb-2">1 Nải (~1.2kg)</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">25.000đ</p>
+<p class="text-slate-400 line-through text-[11px]">30.000đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Xoài cát Hòa Lộc chín vàng đẹp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJVinH8HUTLnxtVJxIelFvmVNJxxqsXWgh-iSMlvrtAirWeHE66h1ENesKtu9UPdG1aYcX_sLGRlIkyuqSA-ZAU70-0maQECeE72OGQ5TdxufqieK12AqaNb8kH-OB5HOev5GNINb7fmzfDbOZPtercL22fvPF8ug66uTqoO-L3B88F9ttYWAMM3s1P5psKVVSFI0o3B0pVW_BiXIe3TS0UCEZIZU-5hxKcdE1THqyFT_MuH-La40CYn49gEE0jU33bJ4MKdSIYd0"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Trái cây</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Xoài Cát Hòa Lộc chín</h3>
+<p class="text-[11px] text-slate-400 mb-2">1 Kg</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">85.000đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Thịt thăn heo tươi ngon thái lát" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwhuhaZ4foKWXir48DvH_2-4SiuuVMQ8Tt-LsHlZ5YRkjamV1p7k6_0Xo8G9eBqZd-K-M4oWHZ06DRWi_koBtTUvQV2TqA0uXMufHbJp7Q0kN6Dwlhx1ioyPY1PfbpFFk2bj7hps_6nC79Wm0aExu9KA4D1bBt70jd_HkqDAFI1P5eD8H0deNAmFqKoTZwYB_NVkCOwcyw37aKKEpgXugfMoSFTM7ZTN4YH2T-BDVT4zqQyZyY6IsIbgmyLfEiCJm6tOge6DC_IEk"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Thực phẩm tươi</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Thịt Thăn Heo CP sạch</h3>
+<p class="text-[11px] text-slate-400 mb-2">500g Khay</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">72.000đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Hộp sữa tươi nguyên chất Vinamilk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL0mAmRdjrapr0ZUUg8LfKKP5dEq-Q1d3d56XNBtoldSyr7cVHkJxDFTRpJfcaiBE3M1G_7KRjooOeCPVOvUgr199kawKcZGiZC1vNijiS5zYbFySeJy0ZDOL677yQZ8DrppWT5GzXCChisnZ3GS5a5dLMqO_DNaqPacOZzrghfi5qq2rOOiE1ZabmWJSNk9TtattNitDHHKne4KkomJCQBD3O8hrNSAcIuH0c4oriHoVukEPFwyO9CD76vOPKsbWOMqGoqPcaACg"/>
+<span class="absolute top-2 right-2 bg-blue-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">MỚI</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Sữa &amp; Đồ uống</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Sữa tươi tiệt trùng Vinamilk ít đường</h3>
+<p class="text-[11px] text-slate-400 mb-2">Lốc 4 hộp x 180ml</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">32.500đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Bông cải xanh tươi mọng nước" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7o6LT2K1kcyqC0OoYDSEKl4SvWdZaHua99gQdch-ALLvi2r11JxXDjTZXXhwkFid_Jel2KEleTQnWskTZvVQ6beL162MRPTlRHEa6ZqjKnBzXnpKQXwZWxrdKbWJygfQQ2typZsSoT97SrobBo3Y6NCTxDmiBrsJvtsY7z0s_mVAIziTLK5Agfz27rFLVRNWhydG_cOpu4T8GG4IR8MLpGihMrq2egR_m43Zu2BKK-AhQK-WWSkiWUOHmOGc6XvrWBrjjRSUQsqw"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Rau củ</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Súp lơ xanh Đà Lạt chuẩn VietGAP</h3>
+<p class="text-[11px] text-slate-400 mb-2">1 Bông (~400g)</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">18.000đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+<div class="relative pt-[100%] bg-slate-50 dark:bg-slate-800">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Khay trứng gà ta sạch đều màu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNw5SG6Sw-O3HpQkx9Vyf_MpD3JOD3XcVVhpGYF-dJ9Suw05xXXwJqEzBDo7HKgIRMFDdwGKPiBjfeJAmqHOL1QE_QMtnAOk1megvayC7mjDUEdSveLOLkxHqeaIDg8wbiBllJ99sNnNhBo8x-YnbBPDUvaoss0IAPwSPObYQlGwEdpwjS1MQpqZqafkBhLEv-4kOZWWwDQmE6tERlnKgJzi1lXkmn48XAw3j55zz3xcuSUOp6OSwflnInCQ1qB-F0D303SW-mVaI"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-wider mb-1">Sữa &amp; Trứng</span>
+<h3 class="text-sm font-semibold text-dark-blue dark:text-white line-clamp-2 leading-tight mb-2 h-10">Trứng gà ta Ba Huân (Hộp 10)</h3>
+<p class="text-[11px] text-slate-400 mb-2">Vỉ 10 quả</p>
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="text-primary font-bold text-base">34.000đ</p>
+</div>
+<button class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading More -->
+<div class="py-8 flex flex-col items-center justify-center gap-2">
+<div class="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+<p class="text-xs text-slate-500 font-medium">Đang tải thêm sản phẩm...</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-6 pb-6 pt-2 flex items-center justify-between z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-bold">Trang chủ</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">category</span>
+<span class="text-[10px] font-medium">Danh mục</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">receipt_long</span>
+<span class="text-[10px] font-medium">Đơn hàng</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">person</span>
+<span class="text-[10px] font-medium">Cá nhân</span>
+</button>
+</nav>
+<!-- Quick Tooltip / Toast for adding items (Floating Action) -->
+<div class="fixed bottom-24 right-4 z-40">
+<button class="w-12 h-12 bg-dark-blue text-white rounded-full shadow-lg flex items-center justify-center animate-bounce">
+<span class="material-icons">support_agent</span>
+</button>
+</div>
+</body></html>

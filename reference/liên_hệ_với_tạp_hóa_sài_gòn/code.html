@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liên hệ với Tạp Hóa Sài Gòn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 antialiased">
+<!-- iOS Status Bar Placeholder -->
+<div class="h-11 bg-[#0a2e7a] w-full"></div>
+<!-- Header / Navigation Bar -->
+<header class="sticky top-0 z-50 bg-[#0a2e7a] text-white px-4 py-3 flex items-center shadow-md">
+<button class="p-2 -ml-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-icons text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold mr-8">Liên hệ</h1>
+</header>
+<main class="max-w-md mx-auto">
+<!-- Map Section -->
+<section class="w-full h-64 bg-slate-200 relative overflow-hidden">
+<img alt="Map view of Ho Chi Minh City" class="w-full h-full object-cover" data-alt="Map showing store location in Saigon city" data-location="Ho Chi Minh City, Vietnam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo-Ds8Iaht_GPIw9aQxwrlK47Zs9oiC2E_3ZVNJrpicBL2SbIvtfMpZQeFxXKYlTvEEzgaAF4wPhcPJ2uSM4v3qFHwUwf79xgjGjZQwkz-M70T6HZBhWNjy74ub4qADp9lF1kUq8Rmg80lHi260e2kEo4VRWApx-FNc9JpI-G_J3_zwtBCDgKI55H7CFJtqnHUW3pskNDMN-UZbnsZ6XPtKRU7kPBd86kls5xOh3TG0TBXkbtI-oSepxlky6yR7MhpD-ZKVheFYdg"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- Location Pin Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-white p-2 rounded-xl shadow-xl flex items-center space-x-2 mb-1">
+<span class="text-xs font-bold text-primary px-2 py-1">Tạp Hóa Sài Gòn</span>
+</div>
+<span class="material-icons text-primary text-4xl drop-shadow-lg">location_on</span>
+</div>
+</section>
+<!-- Quick Contact Actions -->
+<section class="p-6 -mt-6 relative z-10">
+<div class="grid grid-cols-2 gap-4">
+<a class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center group active:scale-95 transition-transform" href="tel:19001234">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+<span class="material-icons text-primary">phone</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Hotline 24/7</span>
+<span class="text-sm font-bold text-slate-800 dark:text-white">1900 1234</span>
+</a>
+<a class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center group active:scale-95 transition-transform" href="mailto:hotro@taphoasaigon.vn">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+<span class="material-icons text-primary">mail</span>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Email</span>
+<span class="text-sm font-bold text-slate-800 dark:text-white">hotro@ths.vn</span>
+</a>
+</div>
+</section>
+<!-- Address Section -->
+<section class="px-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-100 dark:border-slate-700">
+<div class="flex items-start space-x-4">
+<div class="mt-1">
+<span class="material-icons text-primary">place</span>
+</div>
+<div>
+<h3 class="font-bold text-slate-800 dark:text-white mb-1">Trụ sở chính</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            123 Đường Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh
+                        </p>
+<p class="text-xs text-slate-400 mt-2 italic">Mở cửa: 07:00 - 22:00 hàng ngày</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="px-6 mb-12">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Gửi lời nhắn cho chúng tôi</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Chúng tôi sẽ phản hồi yêu cầu của bạn trong vòng 24 giờ làm việc.</p>
+</div>
+<form class="space-y-5" onsubmit="return false;">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5" for="name">Họ và tên</label>
+<input class="w-full px-4 py-3 rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-slate-800 dark:text-white" id="name" placeholder="Nhập tên của bạn" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-slate-800 dark:text-white" id="email" placeholder="email@vi-du.vn" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5" for="message">Lời nhắn</label>
+<textarea class="w-full px-4 py-3 rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-slate-400 text-slate-800 dark:text-white resize-none" id="message" placeholder="Bạn cần hỗ trợ điều gì?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 active:scale-[0.98] transition-all flex items-center justify-center space-x-2" type="submit">
+<span class="material-icons text-xl">send</span>
+<span>Gửi tin nhắn ngay</span>
+</button>
+</form>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0a2e7a] text-white py-10 px-6 mt-auto">
+<div class="flex flex-col items-center text-center">
+<div class="flex items-center space-x-2 mb-4">
+<span class="material-icons text-white text-3xl">shopping_basket</span>
+<span class="text-xl font-bold tracking-tight">Tạp Hóa Sài Gòn</span>
+</div>
+<p class="text-sm text-slate-300 mb-6 px-4">Đồng hành cùng bữa cơm gia đình Việt với thực phẩm tươi ngon mỗi ngày.</p>
+<div class="flex space-x-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+<img alt="Facebook" class="w-5 h-5" data-alt="Facebook social media icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7V7v45heOy9pzX9auTWHe2a5A_484H3e9X5lfHqUeuXwf3GegTed77NiGBmdFteen7i_2rtoLEJkAYGCETCPOLs47r1OJn5zWQhhz7P52GdtTD7kJjGRgldWYbjnucNBUJm4TTdoKXte6zRoHInCcPRKal97D2KpUJH49gtVPJ9HV1rF6Ja8DHocbOQDeNeF6EpRniY6Bu_xq-tqF_WvqI9DydHBkzch-ipRqw80psxrLRoBtwA0fDecxf6-aQIgz7nUyJxOv_xE"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+<img alt="Instagram" class="w-5 h-5" data-alt="Instagram social media icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_yK_OXv3MsmfkPhTLaosEjht77j3gOlKK-rreNg0V-lSyDZDny0dUONAMF86RanTrj0J4FgR6PzBs6tYRvO3cSDt6_rG6Jb4A-QKKxm1vDOcFwY8644NO6O5du9wZv_tqrupzhN2_NraKQ6M_HdOWWgpyY9H_3XCg1B2WkZofB123BzYRbpRfqwf3HsLL_o2qSAAbQjl_guy-rcvdofAsJHsQL5z27GabI-8wlPDMN0z-vaaleDD_cezUY0GrUvnt4vxaSgdlLZw"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+<img alt="Zalo" class="w-5 h-5" data-alt="Zalo local social media icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQnsv0IJXaQokWbvvmNKHVlCfLMFYQiH7L-Wll3DXwGpyQ9tjQFBvXiVvAumfJRSHfJit4RsVMXkHfCsQ7CIrRVVamKtFNldUl1xn4vegEMLm8pjzXMUFlIq1ansDYtkfnzO2mHPN7NdLOcd-jQBf8UKZ6A7jXu3oyEw0YUCHvsZSoD7PzlKhn8sJdC-nzmg1LnWMlem3QnCQAz_bbsp4Mt6y4LPac-WkC3Mq8f9CruTI58Jl6ZtPLWFgZCEbB9SPHDMK6QOkwKGE"/>
+</div>
+</div>
+<div class="border-t border-white/10 pt-6 w-full text-xs text-slate-400">
+<p>© 2024 Tạp Hóa Sài Gòn Co., Ltd.</p>
+<p class="mt-1">All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- iOS Home Indicator -->
+<div class="h-8 bg-[#0a2e7a] w-full flex justify-center items-end pb-2">
+<div class="w-32 h-1.5 bg-white/30 rounded-full"></div>
+</div>
+</main>
+</body></html>

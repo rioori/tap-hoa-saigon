@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Trang chủ Tạp Hóa Sài Gòn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- iOS Status Bar Spacer -->
+<div class="h-12 bg-primary w-full sticky top-0 z-50"></div>
+<!-- Header & Search -->
+<header class="bg-primary pt-2 pb-4 px-4 sticky top-12 z-50 shadow-md">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-inner">
+<span class="material-icons text-primary text-2xl">shopping_basket</span>
+</div>
+<div>
+<h1 class="text-white font-bold text-lg leading-none">Tạp Hóa Sài Gòn</h1>
+<p class="text-white/80 text-xs mt-1 flex items-center">
+<span class="material-icons text-[10px] mr-1">location_on</span> Quận 1, TP. HCM
+                    </p>
+</div>
+</div>
+<div class="relative">
+<button class="bg-white/20 p-2 rounded-full text-white relative">
+<span class="material-icons">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-primary">3</span>
+</button>
+</div>
+</div>
+<div class="relative">
+<input class="w-full h-12 pl-12 pr-4 bg-white dark:bg-slate-800 border-none rounded-xl shadow-sm focus:ring-2 focus:ring-white/50 text-slate-800 dark:text-white placeholder:text-slate-400" placeholder="Tìm kiếm thực phẩm, đồ dùng..." type="text"/>
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Banner -->
+<section class="px-4 py-6">
+<div class="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Fresh Food Banner" class="w-full h-full object-cover" data-alt="Colorful fresh vegetables and fruits on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw3Nk9W6MlYSzDHoqTvu4y77uzrOLbnJLm6gHRFXJM7mYWDKS9EQby1QenM3mJ_-VueMZnnuq5GhtmqY92RdNVLWIZ0wPbNa6zUZLVdKnuP_6OHg49UdU9HmrcvwLeBPrsAtbyfMXIMzYyqqougVMm--FiGzAqdaeHR7aY1PD6_r4DRG_YH2VaELLXyQf7czq292vN55uui8wYS6qORZp06zjwZ_7IUavzUwBT-GDhqlzeEDa8m76hvazb_cRvy6OaSFN7BG5AS2U"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex flex-col justify-center px-6">
+<span class="bg-white text-primary text-[10px] font-bold px-2 py-0.5 rounded-full w-fit mb-2 uppercase tracking-wider">Ưu đãi tuần này</span>
+<h2 class="text-white text-xl font-bold leading-tight mb-2">Thực phẩm tươi sống<br/>Giao hàng trong 2h</h2>
+<button class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold w-fit shadow-sm active:scale-95 transition-transform">
+                        Mua ngay
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="px-4 mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg text-slate-800 dark:text-white">Danh mục</h3>
+<a class="text-primary text-sm font-medium" href="#">Xem tất cả</a>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-green-600">
+<span class="material-icons text-3xl">eco</span>
+</div>
+<span class="text-xs font-semibold text-center">Rau củ</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center text-red-600">
+<span class="material-icons text-3xl">restaurant</span>
+</div>
+<span class="text-xs font-semibold text-center">Thịt tươi</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center text-yellow-600">
+<span class="material-icons text-3xl">bakery_dining</span>
+</div>
+<span class="text-xs font-semibold text-center">Đồ khô</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600">
+<span class="material-icons text-3xl">clean_hands</span>
+</div>
+<span class="text-xs font-semibold text-center">Yếu phẩm</span>
+</div>
+</div>
+</section>
+<!-- Promotion Cards Horizontal -->
+<section class="mb-8">
+<div class="px-4 mb-4">
+<h3 class="font-bold text-lg text-slate-800 dark:text-white">Mới nhập kho</h3>
+</div>
+<div class="flex overflow-x-auto px-4 gap-4 hide-scrollbar">
+<!-- Product Card 1 -->
+<div class="min-w-[160px] bg-white dark:bg-slate-800 rounded-2xl p-3 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden mb-3 bg-slate-50 dark:bg-slate-900">
+<img alt="Thịt ba rọi" class="w-full h-full object-cover" data-alt="Fresh sliced pork belly on a marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvNAQ5VwfNul1g9O8wqdKwoL_TyeaOtHJASG5nnMNB8wSlLM9TkKkXhMh5gjRasJlT-WRdeq-d-WjvJA_Naza7upIknGrE70AH1be2qAl2KxVnCZo6vH8A52oJeKvCjIjbbnes117An_EtlnIhRQuRPnjvT70-NOeKtL2ygDfXobtPyd_m1uzhAnRBSvETQRCoc05_51JBPQfSByJJqZc59Y0FVmuwcdHsI5JzBynPHcCSmROyb3i6A9dAgaak37ZRvgLfbzhwJyQ"/>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-500">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-white mb-1 line-clamp-1">Thịt Ba Rọi Heo</h4>
+<p class="text-[10px] text-slate-400 mb-2">500g / Khay</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary text-sm">85.000đ</span>
+<button class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/30 active:scale-90 transition-transform">
+<span class="material-icons text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[160px] bg-white dark:bg-slate-800 rounded-2xl p-3 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden mb-3 bg-slate-50 dark:bg-slate-900">
+<img alt="Cải thìa" class="w-full h-full object-cover" data-alt="Bunch of green bok choy on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAz_hZvvxpJAAnQmWZUqNIR7sttg7VjkbNpy0a20-r73HVUhQs0Xbn9L_BVj3weN6zYu91osv4G0K2MZo4bvf_KBttx_k9kgI5VJN_1J6sm40Knm3dChhpM0xOLI86niQpgwSKSjDsH2_Nk1vE0V9RmyABOFv2I1fkdsa5DYVNWwPKXgYd33jQvT544x0kL2XV_i_-X0uNELPj-F1rZrAZn8Lqa18NJcEnG8B8dmc9wXvcalpqjy08JtQ0cpLz3j2fimzJWSucbd4"/>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-500">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-white mb-1 line-clamp-1">Cải Thìa Đà Lạt</h4>
+<p class="text-[10px] text-slate-400 mb-2">300g / Túi</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary text-sm">18.000đ</span>
+<button class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/30 active:scale-90 transition-transform">
+<span class="material-icons text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[160px] bg-white dark:bg-slate-800 rounded-2xl p-3 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden mb-3 bg-slate-50 dark:bg-slate-900">
+<img alt="Gạo ST25" class="w-full h-full object-cover" data-alt="Bag of premium white rice with grains visible" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFrfeU8rWPHj8z_f__EkGGdRk5FTr9gKjchVbckrGCpgeQjCXB5gdA1EheFAReYaAwNX5BuggSpS-9sBMkn0mCH2jNTxOYZltQoUnWprBXPsiXcl5eG8AV1U9-tV8E6aNYByS_uokbIzutalS95wLCF1jLCVGCo67nMaRi9zxSmE_6M4V7SEy_KdjH4a4do9OGnK7zUXeUdBlDeAY5weR7RyiYYbQWMEb0-Ym1wQnjcT-Khn9TCh8vQScqFHVg-8OdTQT31SY-F40"/>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-500">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-white mb-1 line-clamp-1">Gạo ST25 Loại 1</h4>
+<p class="text-[10px] text-slate-400 mb-2">5kg / Túi</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary text-sm">195.000đ</span>
+<button class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/30 active:scale-90 transition-transform">
+<span class="material-icons text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Flash Sale -->
+<section class="px-4 mb-8">
+<div class="bg-slate-900 rounded-2xl p-4 overflow-hidden relative">
+<div class="flex items-center justify-between relative z-10 mb-4">
+<div class="flex items-center gap-2">
+<span class="material-icons text-yellow-400">bolt</span>
+<h3 class="font-bold text-lg text-white italic">GIỜ VÀNG</h3>
+<div class="flex gap-1 ml-2">
+<span class="bg-white/10 text-white px-1.5 py-0.5 rounded text-xs font-mono">01</span>
+<span class="text-white">:</span>
+<span class="bg-white/10 text-white px-1.5 py-0.5 rounded text-xs font-mono">45</span>
+<span class="text-white">:</span>
+<span class="bg-white/10 text-white px-1.5 py-0.5 rounded text-xs font-mono">12</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 relative z-10">
+<div class="bg-white rounded-xl p-2 flex items-center gap-2">
+<div class="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<img alt="Cà rốt" class="w-full h-full object-cover" data-alt="Fresh organic orange carrots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDco8xhM3OsWLRsBYZ_gjUKQdhoYy2Phaqbwe4ev9nQTCqA2zCTHtxtxJUHyyihCF0LBTHzwh-IcsxNbFZwEBC4WgWdMwigBHjd0gpRxkCY-67lp_bk2CGgsgeuZ_gT-6WzftX72AzNyagYP5ALsqhpvM1EhMb5qP6X7izo1aJr99hJxxtQh8HJ_hW2N5LqUy8XeQRbY8wxoBnhV4EbRTwmk5l61iz3G-M-F492lR6F626QcgBAJX-Vpfy0UUC--v7quevPlLMRuKg"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-[10px] font-bold text-slate-800 truncate">Cà rốt Đà Lạt</p>
+<p class="text-primary text-xs font-bold">9.000đ <span class="text-[8px] text-slate-400 line-through">15k</span></p>
+</div>
+</div>
+<div class="bg-white rounded-xl p-2 flex items-center gap-2">
+<div class="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden shrink-0">
+<img alt="Trứng" class="w-full h-full object-cover" data-alt="Carton of fresh organic brown eggs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWFwGNVsTDUcG6niFTnVotZvhMQ6FxfmLw42IoMKI184fLjQ-2VD_A6EDdOOt1knTUl7sJ5muT11g5SbNsGJmD1J_BH5AZotPvn8KfTzT4e1GtP0oRJ5WbfmqBc0DohpTdf7a7MH0MkalULfv_iXgjIBgSIinmVvLg7-2dNDnJir6m73SU-358Dx4lxW3I-UWyiwWz1XwynRhX5PnP7soH-61Wp_0tBRg50gJqp9EObXx6b6uflRlutvLJakEW8fBN-eUn4Z3IEI"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-[10px] font-bold text-slate-800 truncate">Trứng gà ta</p>
+<p class="text-primary text-xs font-bold">22.000đ <span class="text-[8px] text-slate-400 line-through">30k</span></p>
+</div>
+</div>
+</div>
+<!-- Abstract BG Elements -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="absolute -left-8 -top-8 w-24 h-24 bg-yellow-400/10 rounded-full blur-xl"></div>
+</div>
+</section>
+<!-- Essential Items Grid -->
+<section class="px-4 mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg text-slate-800 dark:text-white">Nhu yếu phẩm</h3>
+<a class="text-primary text-sm font-medium" href="#">Xem thêm</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Item 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="w-full aspect-square bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden mb-3">
+<img alt="Sữa tươi" class="w-full h-full object-cover" data-alt="Bottle of fresh milk on a plain background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcUDBBHjE-MpVGdLT8QucMBneOuDM07tj5jkEhU_7GdHVxAcs1K69DPa1jZ6ZHXdZhTVkMhk9Si1-HsdjWSvnBBqvh2aYrpZ6z6pYfxVR-OeftEUUsrjFHsfaWZb8Ln0BaySJMTOkQ0ET0tw7xtD5Y4WokArIqVIePm07OBvcTcqPxY4alawgvUthkNsF6hWHzsRwfyqARy_Df9mlr0qO27yzWdwwj__8sp0EFkVElsBl68XGZChjlo1Sx1CzWKXXsegCe26nG1M"/>
+</div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-white mb-1">Sữa tươi TH True Milk</h4>
+<p class="text-[10px] text-slate-400 mb-3">Thùng 48 hộp x 180ml</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary text-sm">345.000đ</span>
+<button class="bg-primary/10 text-primary p-2 rounded-lg active:bg-primary active:text-white transition-colors">
+<span class="material-icons text-lg leading-none">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="w-full aspect-square bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden mb-3">
+<img alt="Dầu ăn" class="w-full h-full object-cover" data-alt="Bottle of golden cooking oil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjbi5DAnG3UaE6jCuUzlvs8LKvga-N8YAPw6LVlaOc4H_PbYNpg3Bss12hrgFpEmnWP8JkqpOw2BFu8saJP6pRoWAsg_lQwQeu4hozkH494SDzKwu4HXSaweC_2nByY0fbb-QBc23bgVqCTDUw05uZ0xabrIs7F5NwyDn6LlbcsneVsxPoheCaFn5yqy2k9n8_STJHOItCUbl_a0xHkFzXA5-Wmv6-uaP3b30I9VeUUBXsbhubKXNVOBsLk3A-hseyFFIzedWGe9Q"/>
+</div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-white mb-1">Dầu đậu nành Simply</h4>
+<p class="text-[10px] text-slate-400 mb-3">Chai 1 Lít</p>
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary text-sm">52.000đ</span>
+<button class="bg-primary/10 text-primary p-2 rounded-lg active:bg-primary active:text-white transition-colors">
+<span class="material-icons text-lg leading-none">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 z-50 flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-bold">Trang chủ</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">grid_view</span>
+<span class="text-[10px] font-medium">Danh mục</span>
+</button>
+<div class="relative -mt-12">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-xl shadow-primary/40 flex items-center justify-center border-4 border-background-light dark:border-background-dark">
+<span class="material-icons text-2xl">qr_code_scanner</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">notifications</span>
+<span class="text-[10px] font-medium">Thông báo</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">person</span>
+<span class="text-[10px] font-medium">Cá nhân</span>
+</button>
+</nav>
+<!-- Map Context (Hidden but requested by theme rules) -->
+<div class="hidden" data-location="Ho Chi Minh City" style=""></div>
+</body></html>

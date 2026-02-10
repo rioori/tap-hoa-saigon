@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Chương trình khuyến mãi - Tạp Hóa Sài Gòn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30">
+<!-- Top Navigation Bar (iOS Style) -->
+<nav class="sticky top-0 z-50 bg-primary text-white pt-12 pb-4 px-4 shadow-md">
+<div class="flex items-center justify-between">
+<button class="p-2 -ml-2">
+<span class="material-icons">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold">Khuyến Mãi Cực Sốc</h1>
+<div class="flex gap-2">
+<button class="p-2"><span class="material-icons">search</span></button>
+<button class="p-2 relative">
+<span class="material-icons">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-red-500 text-[10px] font-bold px-1 rounded-full border-2 border-primary">3</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pb-24">
+<!-- Coupon Banners Section -->
+<section class="mt-4 px-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Mã giảm giá độc quyền</h2>
+<a class="text-primary text-sm font-semibold" href="#">Xem tất cả</a>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<!-- Coupon Item 1 -->
+<div class="flex-shrink-0 w-72 bg-white dark:bg-slate-800 rounded-xl border-l-8 border-primary shadow-sm flex overflow-hidden">
+<div class="p-4 flex-grow">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Đơn hàng từ 200k</p>
+<h3 class="font-bold text-lg text-primary">GIẢM 20.000đ</h3>
+<p class="text-[10px] mt-1 text-slate-400">HSD: 30.11.2023</p>
+</div>
+<div class="w-20 bg-primary/10 dark:bg-primary/20 flex flex-col items-center justify-center border-l border-dashed border-primary/30 px-2">
+<button class="bg-primary text-white text-[10px] font-bold py-1 px-3 rounded-full">LƯU</button>
+</div>
+</div>
+<!-- Coupon Item 2 -->
+<div class="flex-shrink-0 w-72 bg-white dark:bg-slate-800 rounded-xl border-l-8 border-orange-500 shadow-sm flex overflow-hidden">
+<div class="p-4 flex-grow">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Mọi đơn hàng</p>
+<h3 class="font-bold text-lg text-orange-600">FREE SHIP</h3>
+<p class="text-[10px] mt-1 text-slate-400">HSD: 30.11.2023</p>
+</div>
+<div class="w-20 bg-orange-500/10 flex flex-col items-center justify-center border-l border-dashed border-orange-500/30 px-2">
+<button class="bg-orange-500 text-white text-[10px] font-bold py-1 px-3 rounded-full">LƯU</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Flash Sale Section -->
+<section class="mt-6 bg-gradient-to-b from-primary/10 to-transparent py-4 px-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<img alt="Flash" class="w-6 h-6" data-alt="Yellow lightning bolt icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtAFQhuYIipJn7BD2gsjAth36bfCvKshgX2xza4X_GsHoZvwoeCNJaDIy2nE8EGlHvHwLkLb11vWb-chrTlAjhUf3pjBoPISSggs2B9uAdWDrWn4v12YlGwGcuzSi0IJuutlHnIdGwxmO67EQz4-vxmxDgxh5saabFfut365KjbITg7mkVNEfwBNcFAoNkLSzVtKoIQIIVkIk_Fpol8c7vzIiVCB79aNQUKJEpJqFhzmIKDV3or3dFPQv0UTe9MmVA24yF27Adcqs"/>
+<h2 class="text-xl font-extrabold text-primary italic tracking-tight uppercase">Flash Sale</h2>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300">Kết thúc sau</span>
+<div class="flex gap-1">
+<span class="bg-slate-800 text-white text-xs px-1.5 py-0.5 rounded font-mono">02</span>
+<span class="text-slate-800 font-bold">:</span>
+<span class="bg-slate-800 text-white text-xs px-1.5 py-0.5 rounded font-mono">45</span>
+<span class="text-slate-800 font-bold">:</span>
+<span class="bg-slate-800 text-white text-xs px-1.5 py-0.5 rounded font-mono">12</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar">
+<!-- Flash Sale Product 1 -->
+<div class="flex-shrink-0 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-primary/10">
+<div class="relative h-32 w-full">
+<img class="w-full h-full object-cover" data-alt="Fresh red tomatoes in a basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkriINqzcF0PUG-h-CTmtFI3Pnsx03CZTGAC1s5ItvQ3zvAR0CtjuF7R1TjjjOEs4yEK2MZWvQwtRTgNdPpL-VuUSw2wdAQj8ueF7gpARJVpLVgAunfKud0AnbJ_lmDSkjKS3WCUYkXmV3YF8pRf9Loy27-2R76II23BCRszEjSk8_Pm_IPBTiSept0cbsIUwwfKveGj8ZnQt7lKEXnfG1D8hM8cCI0XbstifKsXqNTLzEQxTIgOmqeSLkMy-nMY2_9I2GwhAq2w0"/>
+<div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">-45%</div>
+</div>
+<div class="p-2 text-center">
+<p class="text-[13px] font-bold text-primary">12.000đ</p>
+<p class="text-[10px] text-slate-400 line-through">22.000đ</p>
+<div class="mt-2 h-3 bg-slate-100 dark:bg-slate-700 rounded-full relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full" style="width: 75%"></div>
+<span class="absolute inset-0 text-[8px] text-white flex items-center justify-center font-bold">VỪA BÁN 75%</span>
+</div>
+</div>
+</div>
+<!-- Flash Sale Product 2 -->
+<div class="flex-shrink-0 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-primary/10">
+<div class="relative h-32 w-full">
+<img class="w-full h-full object-cover" data-alt="Bottles of fresh milk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKPgOgeT79HfnGbQ8U-GsDJfF5-bhxZu_BS1D_vCvfWDAizg-Te_Dn2iJkMNd1vmWv502xQKhgdJ6hBQvMX_2Hh_oYlZf4hhWtrTiZq0jOziPAEJLqt8s4O-03wdIpUCV8t6_xipbTdfvQ2blbgzyGbY-eHH9n1KIM0jisxApTcKXB6airmrpRa3Ynm2BcI4sYaag1tPdsRm0-oEQiN2iE0T4y0G9QhaMI-4QX2T3EpUgoKfAPgOzmRy5KcNOMt-H-jA-aC8CVGWU"/>
+<div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">-30%</div>
+</div>
+<div class="p-2 text-center">
+<p class="text-[13px] font-bold text-primary">28.000đ</p>
+<p class="text-[10px] text-slate-400 line-through">40.000đ</p>
+<div class="mt-2 h-3 bg-slate-100 dark:bg-slate-700 rounded-full relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full" style="width: 20%"></div>
+<span class="absolute inset-0 text-[8px] text-white flex items-center justify-center font-bold">VỪA BÁN 20%</span>
+</div>
+</div>
+</div>
+<!-- Flash Sale Product 3 -->
+<div class="flex-shrink-0 w-36 bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-primary/10">
+<div class="relative h-32 w-full">
+<img class="w-full h-full object-cover" data-alt="Fresh oranges in a pile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHdMEQQGA4wz3LqMBaTS4qA8gjIvkOTjf9Pcyh36wwN24SLPC77mwQQto5SmLLLiZNncrLXKEtsR0Ky-O1SUxKS9SgpR8b9oJwf41N6kwZPnHNwLr_imjpRZKzUOglnC4R3VvGN4gqZMi1algXM6sPr6C0po1LTuCL0ZR5WBDSf14tfGhNFk5RXwbzZI7YeZW0PyWw6_UvmWWFFRRjLJWSJxQ4IB-sb2cHQ-HgVW7LcABs59o_cnsTpq_Mg9zLhLD-fkz3W8O6CYA"/>
+<div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">-25%</div>
+</div>
+<div class="p-2 text-center">
+<p class="text-[13px] font-bold text-primary">35.000đ</p>
+<p class="text-[10px] text-slate-400 line-through">47.000đ</p>
+<div class="mt-2 h-3 bg-slate-100 dark:bg-slate-700 rounded-full relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-orange-500 rounded-full" style="width: 90%"></div>
+<span class="absolute inset-0 text-[8px] text-white flex items-center justify-center font-bold">SẮP HẾT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<div class="sticky top-[108px] z-40 bg-background-light dark:bg-background-dark/95 px-4 py-3 flex gap-2 overflow-x-auto hide-scrollbar">
+<button class="whitespace-nowrap bg-primary text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm">Tất cả</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">Giá thấp</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">Giảm sâu</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">Thực phẩm tươi</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">Đồ khô</button>
+</div>
+<!-- Main Product Grid -->
+<section class="mt-2 px-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">Giá sốc hôm nay</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative pt-[100%]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Fresh bunch of bananas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZdEiH6OG35BIrbZknod5B5YCs7JN3emXkkA8EE8G9x8fVbrG99ZIdZ6OITezthfS1K9487hRbMeuyIBaLM0lpOBcc2vnTJi6LjGCHsPg9fZSgymat6J8r_BkBtEq5rsQwI1xw7EPTXQQc3K6lg8ExebYFOkqN9ZnvuSAKLV6BXIIEpbE5D1MeNLomx20g3WUhghPe4Wy_utXpmrnexrZ49FQ7MuF_xsY9yds4eBScABAWwgYsP6jUd7q4Tctyd9qh_2OVb4o1N94"/>
+<div class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">ƯU ĐÃI</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="text-[13px] font-medium text-slate-800 dark:text-slate-200 line-clamp-2 min-h-[40px]">Chuối Già Nam Mỹ - Nải 1.2kg</h3>
+<div class="mt-2 flex flex-col">
+<span class="text-primary font-extrabold text-base">24.500đ</span>
+<span class="text-[11px] text-slate-400 line-through">35.000đ</span>
+</div>
+<button class="mt-3 w-full bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 rounded-lg text-xs flex items-center justify-center gap-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+                            THÊM
+                        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative pt-[100%]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Brown eggs in a paper carton" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmYvl9pM1OCNcjOrleo7VFyxn6nVaNybs7k08qb-bOlzkONgKEsV3GfrvqgPOHlradJawNMe7fVSDtvVR72bLv9c5oBG79BNp6ES2yxy94FkyBh4e_SAgxf5SDI734PPPw0M1Ii1MZ5l00-npccEjj3qvAbFHtBCBRF9aExEEJbQhjLfK08kp7yMvbIDqTWYNqTMiohoWIrWyj7b6xydB5WWxjMQEAWZV8XQtBophqWhCBnlO_siKkv51doNGWHyKoysJ-AcSAG3A"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="text-[13px] font-medium text-slate-800 dark:text-slate-200 line-clamp-2 min-h-[40px]">Trứng Gà Ta Sạch (Hộp 10 quả)</h3>
+<div class="mt-2 flex flex-col">
+<span class="text-primary font-extrabold text-base">32.000đ</span>
+<span class="text-[11px] text-slate-400 line-through">42.000đ</span>
+</div>
+<button class="mt-3 w-full bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 rounded-lg text-xs flex items-center justify-center gap-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+                            THÊM
+                        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative pt-[100%]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Fresh greens and vegetables display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7gstQfLTr_N01wrhpOGGwOekPYFBkbkJe4dpl8uZZODrjuJNp3fE8sAId5C7wYSjlvWP3QNgUBeSiiGWF1K5RlPMrqkdnxN-dhe4Rpj7saLHl3fZDUsKkv4hkoFnNQFxxR_z70qoDucecZW8uzXs64vb2KIWWlur-YlGCfze_TFu9H3BkzYtnF1NYXUR9VJBSTG4vR0a7bDFcFGAwOcPaGKZ72NHUpG02qdUQQzZu7YdUW-aaaDl0eUrmaI-WkocWuMtz-RVyCfw"/>
+<div class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">-15%</div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="text-[13px] font-medium text-slate-800 dark:text-slate-200 line-clamp-2 min-h-[40px]">Combo Rau Củ Hầm Xương (500g)</h3>
+<div class="mt-2 flex flex-col">
+<span class="text-primary font-extrabold text-base">18.000đ</span>
+<span class="text-[11px] text-slate-400 line-through">21.000đ</span>
+</div>
+<button class="mt-3 w-full bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 rounded-lg text-xs flex items-center justify-center gap-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+                            THÊM
+                        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col">
+<div class="relative pt-[100%]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Bottle of cooking oil and grains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmq8nQzsIrnunFHN_J9BMA99LpyrLOq93jFcUKlR-JqQiD2lw98ML_75iGQghdpmLL4Kh8kh6FjpllS42gwuU9p9zdOy23WTCyC3_fHIhSd1UKKKowtuj1GVF3pziT6iu9apKSY9D1Fmjl1uhy9820YhcF_N1mG_mkf4-pq6Ij4rx6wx8dSRjUy71JchZ3BXi4oQSp-SBR8l8jMdolrOTN0yo1_vkD6aKllSM-00pUa4ATfuFsbCKjkqfPUmXZfmicOkWKfgRuf0"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="text-[13px] font-medium text-slate-800 dark:text-slate-200 line-clamp-2 min-h-[40px]">Dầu Ăn Tường An Cooking Oil 1L</h3>
+<div class="mt-2 flex flex-col">
+<span class="text-primary font-extrabold text-base">45.000đ</span>
+<span class="text-[11px] text-slate-400 line-through">55.000đ</span>
+</div>
+<button class="mt-3 w-full bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 rounded-lg text-xs flex items-center justify-center gap-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+                            THÊM
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- iOS Bottom Tab Bar -->
+<nav class="fixed bottom-0 w-full ios-blur bg-white/80 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800 pb-8 pt-2 px-6 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-icons text-2xl">home</span>
+<span class="text-[10px] font-medium">Trang chủ</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-icons text-2xl">grid_view</span>
+<span class="text-[10px] font-medium">Danh mục</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-icons text-2xl">local_offer</span>
+<span class="text-[10px] font-bold">Khuyến mãi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-icons text-2xl">receipt_long</span>
+<span class="text-[10px] font-medium">Đơn hàng</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-icons text-2xl">person</span>
+<span class="text-[10px] font-medium">Tài khoản</span>
+</a>
+</nav>
+</body></html>

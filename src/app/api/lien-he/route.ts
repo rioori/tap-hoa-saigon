@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,6 +38,15 @@ export async function POST(request: NextRequest) {
           </div>
         `,
       });
+    }
+
+    // Save to Supabase
+    try {
+      await supabaseAdmin
+        .from("contact_messages")
+        .insert({ name, email, message });
+    } catch (dbError) {
+      console.error("DB save error:", dbError);
     }
 
     return NextResponse.json({

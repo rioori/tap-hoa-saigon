@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateOrderId } from "@/lib/utils";
+import { supabaseAdmin } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -130,6 +131,43 @@ export async function POST(request: NextRequest) {
       }
     } else {
       console.log("RESEND_API_KEY not configured. Skipping email.");
+    }
+
+    // Save order to Supabase
+    try {
+      const orderDetails = JSON.stringify({
+        phone: customer.phone,
+        email: customer.email,
+        address: customer.address,
+        payment_method: paymentMethod,
+        subtotal,
+        shipping_fee: shippingFee,
+        items: items.map((i: { name: string; quantity: number; price: number; unit: string }) => ({
+          name: i.name,
+          qty: i.quantity,
+          price: i.price,
+          unit: i.unit,
+        })),
+        customer_note: customer.note || "",
+      });
+
+      const { error: orderError } = await supabaseAdmin
+        .from("orders")
+        .insert({
+          order_code: orderId,
+          customer_name: customer.name,
+          total_amount: total,
+          status: "pending",
+          note: orderDetails,
+        });
+
+      if (orderError) {
+        console.error("Supabase order save error:", orderError);
+      } else {
+        console.log("Order saved to Supabase:", orderId);
+      }
+    } catch (dbError) {
+      console.error("Database error:", dbError);
     }
 
     return NextResponse.json({

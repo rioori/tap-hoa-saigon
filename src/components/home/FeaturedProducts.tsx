@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { getNewProducts } from "@/data/products";
+import { Product } from "@/types";
 import ProductCard from "@/components/product/ProductCard";
 
-export default function FeaturedProducts() {
-  const products = getNewProducts();
-
+export default function FeaturedProducts({ products }: { products: Product[] }) {
   return (
     <section className="px-4 mb-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-4">

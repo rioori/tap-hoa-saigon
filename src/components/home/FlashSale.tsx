@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { getFlashSaleProducts } from "@/data/products";
+import { Product } from "@/types";
 import { formatPrice } from "@/lib/utils";
 import { useCartStore } from "@/store/cart-store";
 import { useToastStore } from "@/store/toast-store";
 
-export default function FlashSale() {
-  const products = getFlashSaleProducts();
+export default function FlashSale({ products }: { products: Product[] }) {
   const addItem = useCartStore((s) => s.addItem);
   const showToast = useToastStore((s) => s.showToast);
   const [time, setTime] = useState({ h: 1, m: 45, s: 12 });

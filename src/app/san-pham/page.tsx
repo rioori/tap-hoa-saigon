@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { products } from "@/data/products";
+import { Product } from "@/types";
 import ProductCard from "@/components/product/ProductCard";
 import { CATEGORIES } from "@/lib/utils";
 
@@ -12,11 +12,22 @@ function ProductListingInner() {
   const searchQuery = searchParams.get("q") || "";
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [sortBy, setSortBy] = useState("default");
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/products")
+      .then((r) => r.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
   const filtered = useMemo(() => {
     let result = [...products];
 
-    // Filter by search query
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       result = result.filter(
@@ -27,7 +38,6 @@ function ProductListingInner() {
       );
     }
 
-    // Filter by category
     if (selectedCategory !== "all") {
       result = result.filter((p) => p.category === selectedCategory);
     }
@@ -39,16 +49,35 @@ function ProductListingInner() {
       result.sort((a, b) => a.name.localeCompare(b.name));
 
     return result;
-  }, [selectedCategory, sortBy, searchQuery]);
+  }, [selectedCategory, sortBy, searchQuery, products]);
+
+  if (loading) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="bg-white rounded-2xl overflow-hidden border border-slate-100 animate-pulse">
+              <div className="aspect-square bg-slate-100" />
+              <div className="p-3 space-y-2">
+                <div className="h-4 bg-slate-100 rounded w-3/4" />
+                <div className="h-3 bg-slate-100 rounded w-1/2" />
+                <div className="h-5 bg-slate-100 rounded w-1/3" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
-      {/* Search Results Banner */}
       {searchQuery && (
         <div className="bg-primary-light rounded-xl px-4 py-3 mb-4 flex items-center justify-between">
           <p className="text-sm text-slate-700">
-            Kết quả tìm kiếm cho &ldquo;<span className="font-bold text-primary">{searchQuery}</span>&rdquo;
-            {" "}({filtered.length} sản phẩm)
+            Kết quả tìm kiếm cho &ldquo;
+            <span className="font-bold text-primary">{searchQuery}</span>
+            &rdquo; ({filtered.length} sản phẩm)
           </p>
           <a href="/san-pham" className="text-xs font-bold text-primary hover:underline">
             Xóa bộ lọc
@@ -56,7 +85,6 @@ function ProductListingInner() {
         </div>
       )}
 
-      {/* Category Chips */}
       <div className="flex overflow-x-auto hide-scrollbar gap-2 mb-4 pb-2">
         <button
           onClick={() => setSelectedCategory("all")}
@@ -83,11 +111,9 @@ function ProductListingInner() {
         ))}
       </div>
 
-      {/* Sort Bar */}
       <div className="flex items-center justify-between mb-6 bg-white rounded-xl p-3 border border-slate-100">
         <span className="text-sm text-slate-500">
-          <span className="font-bold text-slate-800">{filtered.length}</span>{" "}
-          sản phẩm
+          <span className="font-bold text-slate-800">{filtered.length}</span> sản phẩm
         </span>
         <select
           value={sortBy}
@@ -101,7 +127,6 @@ function ProductListingInner() {
         </select>
       </div>
 
-      {/* Product Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         {filtered.map((product) => (
           <ProductCard key={product.id} product={product} />

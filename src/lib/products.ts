@@ -56,19 +56,28 @@ export async function fetchAllProducts(): Promise<Product[]> {
     return cachedProducts;
   }
 
-  const { data, error } = await supabaseAdmin
-    .from("products")
-    .select("*")
-    .order("created_at", { ascending: false });
+  // Retry up to 3 times for slow connections
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const { data, error } = await supabaseAdmin
+      .from("products")
+      .select("*")
+      .order("created_at", { ascending: false });
 
-  if (error) {
-    console.error("Supabase fetch products error:", error);
-    return cachedProducts || [];
+    if (data) {
+      cachedProducts = (data as SupabaseProduct[]).map(mapToProduct);
+      cacheTime = now;
+      return cachedProducts;
+    }
+
+    if (attempt < 3) {
+      console.warn(`Supabase fetch attempt ${attempt} failed, retrying...`);
+      await new Promise((r) => setTimeout(r, 1000));
+    } else {
+      console.error("Supabase fetch products error:", error);
+    }
   }
 
-  cachedProducts = (data as SupabaseProduct[]).map(mapToProduct);
-  cacheTime = now;
-  return cachedProducts;
+  return cachedProducts || [];
 }
 
 export async function fetchProductBySlug(
